@@ -175,8 +175,17 @@ function generateImei() {
   return partial + ((10 - (sum % 10)) % 10);
 }
 
+function getPersistentImei() {
+  let imei = localStorage.getItem('gsma_provisioned_imei');
+  if (!imei) {
+    imei = generateImei();
+    localStorage.setItem('gsma_provisioned_imei', imei);
+  }
+  return imei;
+}
+
 function showGeneratedImei() {
-  const newImei = generateImei();
+  const newImei = getPersistentImei();
 
   elements.progressContainer.classList.add('hidden');
   elements.imeiResult.classList.remove('hidden');
